@@ -27,3 +27,21 @@ bool command::list()
 
 	return true;
 }
+
+bool command::add(const char *from, const char *to)
+{
+
+	// open file
+	char from_filename[FILENAME_MAX], to_filename[FILENAME_MAX];
+	sprintf(from_filename, ".%csetting%cfrom", PATH_BREAK_CHARACTER, PATH_BREAK_CHARACTER);
+	sprintf(to_filename, ".%csetting%cto", PATH_BREAK_CHARACTER, PATH_BREAK_CHARACTER);
+	ifstream from_fs(from_filename, ios_base::in | ios_base::app), to_fs(to_filename, ios_base::in | ios_base::app);
+	if(from_fs.fail() || to_fs.fail())
+		return false;
+
+	// write
+	from_fs << from << endl;
+	to_fs << to << endl;
+
+	return true;
+}
