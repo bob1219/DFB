@@ -2,6 +2,7 @@
 #include <cstdio>
 #include <iostream>
 #include <string>
+#include <fstream>
 
 // Header
 #include "constant.h"
@@ -30,7 +31,6 @@ bool command::list()
 
 bool command::add(const char *from, const char *to)
 {
-
 	// open file
 	char from_filename[FILENAME_MAX], to_filename[FILENAME_MAX];
 	sprintf(from_filename, ".%csetting%cfrom", PATH_BREAK_CHARACTER, PATH_BREAK_CHARACTER);
