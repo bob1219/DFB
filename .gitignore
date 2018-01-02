@@ -1,0 +1,6 @@
+*.txt
+*.cmd
+*.o
+*.exe
+setting/*
+!.gitkeep
