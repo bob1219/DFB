@@ -45,3 +45,15 @@ bool command::add(const char *from, const char *to)
 
 	return true;
 }
+
+bool command::clear()
+{
+	char from_filename[FILENAME_MAX], to_filename[FILENAME_MAX];
+	sprintf(from_filename, ".%csetting%cfrom", PATH_BREAK_CHARACTER, PATH_BREAK_CHARACTER);
+	sprintf(to_filename, ".%csetting%cto", PATH_BREAK_CHARACTER, PATH_BREAK_CHARACTER);
+	ifstream from_fs(from_filename, ios_base::trunc), to_fs(to_filename, ios_base::trunc);
+	if(from_fs.fail() || to_fs.fail())
+		return false;
+
+	return true;
+}
