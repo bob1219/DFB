@@ -29,7 +29,7 @@ int main(int argc, char **argv)
 			return EXIT_FAILURE;
 		}
 
-		ret = command::add(argv[2], argv[3]);
+		ret = command::add(static_cast<const char*>(argv[2]), static_cast<const char*>(argv[3]));
 	}
 	else if(!strcmp(argv[1], "clear"))
 		ret = command::clear();
