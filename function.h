@@ -5,6 +5,8 @@ namespace dfb
 {
 	namespace command
 	{
+		using namespace std;
+
 		bool list();
 		bool add(const char *from, const char *to);
 		bool clear();
